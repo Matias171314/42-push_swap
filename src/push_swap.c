@@ -6,7 +6,7 @@
 /*   By: mvasquez <mvasquez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/03 18:27:55 by mvasquez          #+#    #+#             */
-/*   Updated: 2026/04/05 23:43:41 by mvasquez         ###   ########.fr       */
+/*   Updated: 2026/04/05 23:59:02 by mvasquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,7 @@ int main (int argc, char *argv[])
 		else
 			turk_sort(&a, &b);
     }
+	free_stack(&a);
+	free_stack(&b);
 	return (0);
 }

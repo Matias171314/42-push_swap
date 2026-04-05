@@ -25,6 +25,7 @@ void	check_args(char *argv[]);
 void	ft_error(char* msg);
 long	ft_atol(const char *str);
 int		ft_abs(int n);
+void	free_stack(t_stack **stack);
 
 t_stack	*new_stack_node(int value);
 void	stack_node_add_back(t_stack **stack, t_stack *new_node);
