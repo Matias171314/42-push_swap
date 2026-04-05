@@ -6,7 +6,7 @@
 /*   By: mvasquez <mvasquez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/04 11:07:20 by mvasquez          #+#    #+#             */
-/*   Updated: 2026/04/04 11:07:20 by mvasquez         ###   ########.fr       */
+/*   Updated: 2026/04/05 23:40:53 by mvasquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,11 @@ long	ft_atol(const char *str)
 		str++;
 	}
 	return (result * sign);
+}
+
+int	ft_abs (int n)
+{
+	if (n < 0)
+		return (-n);
+	return (n);
 }
