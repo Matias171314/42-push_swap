@@ -10,6 +10,10 @@ typedef struct s_stack
 {
 	int					value;
 	int					index;
+	int					pos;
+	int					target_pos;
+	int					cost_a;
+	int					cost_b;
 	struct s_stack		*next;
 	struct s_stack		*prev;
 }	t_stack;
@@ -47,6 +51,13 @@ void    sort_2(t_stack **a);
 void    sort_3(t_stack **a);
 void	sort_4_5(t_stack **a, t_stack **b);
 
-void	radix_sort(t_stack **a, t_stack **b);
+void	get_position(t_stack **stack);
+int		get_lowest_index_pos(t_stack **stack);
+void	get_target_position(t_stack **a, t_stack **b);
+void	get_cost(t_stack **a, t_stack **b);
+
+void	do_move(t_stack **a, t_stack **b, int cost_a, int cost_b);
+
+void	turk_sort(t_stack **a, t_stack **b);
 
 #endif

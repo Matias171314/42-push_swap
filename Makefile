@@ -26,7 +26,10 @@ SRCS        =	src/push_swap.c \
 				src/operations/rotate.c \
 				src/operations/swap.c \
 				src/algorithm/sort.c \
-				src/algorithm/radix_sort.c
+				src/algorithm/turk_utils.c \
+				src/algorithm/cost.c \
+				src/algorithm/do_move.c \
+				src/algorithm/turk_sort.c
 
 OBJS        = $(SRCS:.c=.o)
 

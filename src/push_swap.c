@@ -61,7 +61,7 @@ int main (int argc, char *argv[])
 		else if (stack_size(a) <= 5)
 			sort_4_5(&a, &b);
 		else
-			radix_sort(&a, &b);
+			turk_sort(&a, &b);
     }
 	print_stack(a, b);
 	return (0);
