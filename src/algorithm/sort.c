@@ -6,7 +6,7 @@
 /*   By: mvasquez <mvasquez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/05 14:14:07 by mvasquez          #+#    #+#             */
-/*   Updated: 2026/04/06 15:39:51 by mvasquez         ###   ########.fr       */
+/*   Updated: 2026/04/06 15:44:39 by mvasquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,9 +86,6 @@ static void	move_min_to_top(t_stack **a)
 
 void	sort_4_5(t_stack **a, t_stack **b)
 {
-	int	min_pos;
-	int	size;
-
 	while (stack_size(*a) > 3)
 	{
 		move_min_to_top(a);

@@ -6,7 +6,7 @@
 /*   By: mvasquez <mvasquez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/03 18:27:55 by mvasquez          #+#    #+#             */
-/*   Updated: 2026/04/06 15:40:10 by mvasquez         ###   ########.fr       */
+/*   Updated: 2026/04/06 15:43:45 by mvasquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ static void	choose_sort(t_stack **a, t_stack **b)
 	int	size;
 
 	size = stack_size(*a);
-	if (stack_size(a) == 2)
-		sort_2(&a);
-	else if (stack_size(a) == 3)
-		sort_3(&a);
-	else if (stack_size(a) <= 5)
+	if (size == 2)
+		sort_2(a);
+	else if (size == 3)
+		sort_3(a);
+	else if (size <= 5)
 		sort_4_5(a, b);
 	else
 		turk_sort(a, b);
