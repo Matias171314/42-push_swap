@@ -6,17 +6,11 @@
 /*   By: mvasquez <mvasquez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/04 11:07:20 by mvasquez          #+#    #+#             */
-/*   Updated: 2026/04/05 23:56:09 by mvasquez         ###   ########.fr       */
+/*   Updated: 2026/04/06 15:36:51 by mvasquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
-void	ft_error(char *msg)
-{
-	ft_putendl_fd(msg, 2);
-	exit(1);
-}
 
 long	ft_atol(const char *str)
 {
@@ -54,7 +48,7 @@ void	free_stack(t_stack **stack)
 	t_stack	*current;
 
 	if (!stack || !*stack)
-		return;
+		return ;
 	current = *stack;
 	while (current)
 	{
@@ -63,4 +57,17 @@ void	free_stack(t_stack **stack)
 		current = tmp;
 	}
 	*stack = NULL;
+}
+
+int	is_sorted(t_stack *stack)
+{
+	if (!stack)
+		return (1);
+	while (stack->next != NULL)
+	{
+		if (stack->value > stack->next->value)
+			return (0);
+		stack = stack->next;
+	}
+	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: mvasquez <mvasquez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/05 23:02:02 by mvasquez          #+#    #+#             */
-/*   Updated: 2026/04/05 23:02:02 by mvasquez         ###   ########.fr       */
+/*   Updated: 2026/04/06 15:16:21 by mvasquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,9 @@ void	get_cost(t_stack **a, t_stack **b)
 		tmp_b->cost_b = tmp_b->pos;
 		if (tmp_b->pos > size_b / 2)
 			tmp_b->cost_b = (size_b - tmp_b->pos) * -1;
-			
 		tmp_b->cost_a = tmp_b->target_pos;
 		if (tmp_b->target_pos > size_a / 2)
 			tmp_b->cost_a = (size_a - tmp_b->target_pos) * -1;
-			
 		tmp_b = tmp_b->next;
 	}
 }

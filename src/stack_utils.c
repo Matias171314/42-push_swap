@@ -6,7 +6,7 @@
 /*   By: mvasquez <mvasquez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/04 12:51:32 by mvasquez          #+#    #+#             */
-/*   Updated: 2026/04/04 12:51:32 by mvasquez         ###   ########.fr       */
+/*   Updated: 2026/04/06 15:15:39 by mvasquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,11 @@ void	stack_node_add_back(t_stack **stack, t_stack *new_node)
 	t_stack	*last;
 
 	if (!stack || !new_node)
-		return;
+		return ;
 	if (*stack == NULL)
 	{
 		*stack = new_node;
-		return;
+		return ;
 	}
 	last = *stack;
 	while (last->next)
@@ -52,7 +52,7 @@ void	init_stack_a(t_stack **a, char **args)
 {
 	int		n;
 	int		i;
-	t_stack *new_node;
+	t_stack	*new_node;
 
 	i = 0;
 	while (args[i])
@@ -60,7 +60,7 @@ void	init_stack_a(t_stack **a, char **args)
 		n = ft_atoi(args[i]);
 		new_node = new_stack_node(n);
 		if (!new_node)
-			return;
+			return ;
 		stack_node_add_back(a, new_node);
 		i++;
 	}

@@ -6,25 +6,31 @@
 /*   By: mvasquez <mvasquez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/03 21:47:53 by mvasquez          #+#    #+#             */
-/*   Updated: 2026/04/03 21:47:53 by mvasquez         ###   ########.fr       */
+/*   Updated: 2026/04/06 15:36:34 by mvasquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
+void	ft_error(char *msg)
+{
+	ft_putendl_fd(msg, 2);
+	exit(1);
+}
+
 int	is_valid_number(char *str)
 {
-    if (*str == '-' || *str == '+')
-        str++;
-    if (*str == '\0')
-        return (0);
-    while (*str != '\0')
-    {
-        if (*str < '0' || *str > '9')
-            return (0);
-        str++;
-    }
-    return (1);
+	if (*str == '-' || *str == '+')
+		str++;
+	if (*str == '\0')
+		return (0);
+	while (*str != '\0')
+	{
+		if (*str < '0' || *str > '9')
+			return (0);
+		str++;
+	}
+	return (1);
 }
 
 int	has_duplicates(char **args)
@@ -47,7 +53,7 @@ int	has_duplicates(char **args)
 	return (0);
 }
 
-void	check_args (char **args)
+void	check_args(char **args)
 {
 	long	num;
 	int		i;

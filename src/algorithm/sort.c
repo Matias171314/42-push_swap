@@ -6,24 +6,11 @@
 /*   By: mvasquez <mvasquez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/05 14:14:07 by mvasquez          #+#    #+#             */
-/*   Updated: 2026/04/05 14:14:07 by mvasquez         ###   ########.fr       */
+/*   Updated: 2026/04/06 15:39:51 by mvasquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
-
-int	is_sorted(t_stack *stack)
-{
-	if (!stack)
-		return (1);
-	while (stack->next != NULL)
-	{
-		if (stack->value > stack->next->value)
-			return (0);
-		stack = stack->next;
-	}
-	return (1);
-}
 
 void	sort_2(t_stack **a)
 {
@@ -72,6 +59,31 @@ static int	get_min_pos(t_stack *a)
 	return (min_pos);
 }
 
+static void	move_min_to_top(t_stack **a)
+{
+	int	min_pos;
+	int	size;
+
+	min_pos = get_min_pos(*a);
+	size = stack_size(*a);
+	if (min_pos <= size / 2)
+	{
+		while (min_pos > 0)
+		{
+			ra(a);
+			min_pos--;
+		}
+	}
+	else
+	{
+		while (min_pos < size)
+		{
+			rra(a);
+			min_pos++;
+		}
+	}
+}
+
 void	sort_4_5(t_stack **a, t_stack **b)
 {
 	int	min_pos;
@@ -79,24 +91,7 @@ void	sort_4_5(t_stack **a, t_stack **b)
 
 	while (stack_size(*a) > 3)
 	{
-		min_pos = get_min_pos(*a);
-		size = stack_size(*a);
-		if (min_pos <= size / 2)
-		{
-			while (min_pos > 0)
-			{
-				ra(a);
-				min_pos--;
-			}
-		}
-		else
-		{
-			while (min_pos < size)
-			{
-				rra(a);
-				min_pos++;
-			}
-		}
+		move_min_to_top(a);
 		pb(a, b);
 	}
 	sort_3(a);
