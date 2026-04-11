@@ -6,7 +6,7 @@
 /*   By: mvasquez <mvasquez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/03 21:47:53 by mvasquez          #+#    #+#             */
-/*   Updated: 2026/04/06 15:36:34 by mvasquez         ###   ########.fr       */
+/*   Updated: 2026/04/09 18:34:34 by mvasquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,21 +53,46 @@ int	has_duplicates(char **args)
 	return (0);
 }
 
-void	check_args(char **args)
+void	free_split(char **split)
 {
-	long	num;
+	int	i;
+
+	i = 0;
+	if (split == NULL)
+		return ;
+	while (split[i] != NULL)
+	{
+		free(split[i]);
+		i++;
+	}
+	free(split);
+}
+
+void	check_args(char **args, int is_split)
+{
 	int		i;
 
 	if (has_duplicates(args))
+	{
+		if (is_split)
+			free_split(args);
 		ft_error("Error");
+	}
 	i = 0;
 	while (args[i])
 	{
 		if (!is_valid_number(args[i]))
+		{
+			if (is_split)
+				free_split(args);
 			ft_error("Error");
-		num = ft_atol(args[i]);
-		if (num < INT_MIN || num > INT_MAX)
+		}
+		if (ft_atol(args[i]) < INT_MIN || ft_atol(args[i]) > INT_MAX)
+		{
+			if (is_split)
+				free_split(args);
 			ft_error("Error");
+		}
 		i++;
 	}
 }

@@ -6,14 +6,14 @@
 #    By: mvasquez <mvasquez@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/04 11:55:36 by mvasquez          #+#    #+#              #
-#    Updated: 2026/04/05 16:40:48 by mvasquez         ###   ########.fr        #
+#    Updated: 2026/04/06 17:49:29 by mvasquez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME        = push_swap
 CC          = cc
 CFLAGS      = -Wall -Wextra -Werror
-
+RM			= rm -f
 LIBFT_DIR   = libft
 LIBFT       = $(LIBFT_DIR)/libft.a
 
@@ -46,12 +46,12 @@ $(NAME): $(OBJS)
 
 clean:
 	@make clean -C $(LIBFT_DIR)
-	rm -f $(OBJS)
+	$(RM) $(OBJS)
 
 fclean: clean
 	@make fclean -C $(LIBFT_DIR)
-	rm -f $(NAME)
+	$(RM) $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all, clean, fclean, re

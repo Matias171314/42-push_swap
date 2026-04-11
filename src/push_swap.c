@@ -6,7 +6,7 @@
 /*   By: mvasquez <mvasquez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/03 18:27:55 by mvasquez          #+#    #+#             */
-/*   Updated: 2026/04/06 15:43:45 by mvasquez         ###   ########.fr       */
+/*   Updated: 2026/04/09 18:37:03 by mvasquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,10 @@ int	main(int argc, char *argv[])
 		args = ft_split(argv[1], ' ');
 	else
 		args = argv + 1;
-	check_args(args);
+	check_args(args, argc == 2);
 	init_stack_a(&a, args);
+	if (argc == 2)
+		free_split(args);
 	assign_index(a);
 	if (!is_sorted(a))
 		choose_sort(&a, &b);

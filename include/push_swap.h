@@ -6,7 +6,7 @@
 /*   By: mvasquez <mvasquez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/06 15:17:30 by mvasquez          #+#    #+#             */
-/*   Updated: 2026/04/06 15:36:40 by mvasquez         ###   ########.fr       */
+/*   Updated: 2026/04/09 18:33:11 by mvasquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ typedef struct s_stack
 void	ft_error(char *msg);
 int		is_valid_number(char *str);
 int		has_duplicates(char **args);
-void	check_args(char *argv[]);
+void	free_split(char **split);
+void	check_args(char **args, int is_split);
 
 long	ft_atol(const char *str);
 int		ft_abs(int n);
